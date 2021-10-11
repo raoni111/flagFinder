@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import styled, { createGlobalStyle } from 'styled-components';
+import * as color from '../config/color';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -12,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Nunito Sans', sans-serif;
     outline: none;
     border: none;
+  }
+  body {
+    height: 100vh;
+    background-color: ${color.VeryDarkBlue};
   }
 `;
 

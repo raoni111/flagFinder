@@ -16,6 +16,9 @@ export const Section = styled.section`
   width: 100%;
   min-height: 100vh;
   background-color: ${color.VeryDarkBlue};
+  @media (max-height: 100vh) {
+    height: 100%;
+  }
 `;
 export const Header = styled.header`
   ${displayFlex('space-between', 'row', 'center')}
@@ -38,9 +41,21 @@ export const Header = styled.header`
       margin-left: 0.5rem;
     }
   }
+  @media (max-width: 520px) {
+    padding: 1rem 4rem;
+  }
+  @media (max-width: 360px) {
+    padding: 1rem 2rem;
+  }
 `;
 export const Article = styled.article`
   padding: 0rem 7rem;
+  @media (max-width: 520px) {
+    padding: 0rem 4rem;
+  }
+  @media (max-width: 360px) {
+    padding: 0rem 2rem;
+  }
 `;
 export const Nav = styled.nav`
   ${displayFlex('space-between', 'row', 'center')}
@@ -51,8 +66,13 @@ export const Nav = styled.nav`
     padding: 1.3rem 1rem;
     border-radius: 5px;
     background-color: ${color.DarkBlue};
-    .search-icon {
-      color: ${color.FontColorWhite};
+    .button-search-countries {
+      cursor: pointer;
+      ${displayFlex('center', 'row', 'center')}
+      background-color: transparent;
+      .search-icon {
+        color: ${color.FontColorWhite};
+      }
     }
     input {
       width: 400px;
@@ -85,6 +105,20 @@ export const Nav = styled.nav`
       }
     }
   }
+  @media (max-width: 760px) {
+    ${displayFlex('start', 'column', 'start')}
+    .select-content {
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: 580px) {
+    .search-content {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+  }
 `;
 export const Countries = styled.div`
   display: grid;
@@ -94,7 +128,7 @@ export const Countries = styled.div`
   gap: 4rem;
   .countries-card {
     overflow: hidden;
-    height: 350px;
+    height: 380px;
     border-radius: 10px;
     background-color: ${color.DarkBlue};
     .flag-conteiner {
@@ -124,5 +158,20 @@ export const Countries = styled.div`
         }
       }
     }
+  }
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 520px) {
+    padding: 1.5rem 4rem;
+  }
+  @media (max-width: 360px) {
+    padding: 1.5rem 2rem;
   }
 `;
