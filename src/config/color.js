@@ -11,3 +11,7 @@ export const VeryDarkBlue = 'hsl(207, 26%, 17%)';
 export const FontColorWhite = 'hsl(0, 0%, 100%)';
 export const FontColorGray = 'hsl(0, 0%, 52%)';
 export const FontColorVaryLigthGray = 'hsl(0, 0%, 90%)';
+
+// light mode
+export const VeryLightGray = 'hsl(0, 0%, 98%)';
+export const white = 'white';

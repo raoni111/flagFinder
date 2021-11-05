@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // icons
-import { WiMoonWaningCrescent2 } from 'react-icons/wi';
+import { WiMoonWaningCrescent2, WiSolarEclipse } from 'react-icons/wi';
 import { FiSearch, FiArrowLeft } from 'react-icons/fi';
 
 // style component
@@ -25,8 +25,6 @@ export default class Home extends Component {
       flags: {
         png: '',
       },
-      currencies: '',
-      languages: '',
       borderElement: [''],
     },
   };
@@ -61,7 +59,6 @@ export default class Home extends Component {
       this.setState({ light: 'lightOn' });
     }
     document.body.id = 'light';
-    console.log(light);
   };
 
   openDetail = (e) => {
@@ -112,7 +109,10 @@ export default class Home extends Component {
         <h1 id={response[index].name}>{response[index].name}</h1>
         <div id={response[index].name}>
           <h3 id={response[index].name}>
-            Population: <span>{response[index].population}</span>
+            Population:{' '}
+            <span translate="no">
+              {this.formatNumberOfPeople(response[index].population)}
+            </span>
           </h3>
           <h3 id={response[index].name}>
             Region: <span>{response[index].region}</span>
@@ -158,6 +158,9 @@ export default class Home extends Component {
           const languageArray = Object.entries(response[index].translations);
           let index2 = '';
           if (response[index].name.toLowerCase() === input.toLowerCase()) {
+            this.setState({
+              countries: [],
+            });
             arrayOFCountri.push(this.buildElement(response, index));
             this.setState({ countries: arrayOFCountri });
             return;
@@ -186,7 +189,9 @@ export default class Home extends Component {
       png: !countrieParams.flags.png ? '' : countrieParams.flags.png,
       name: !countrieParams.name ? '' : countrieParams.name,
       nativeName: !countrieParams.nativeName ? '' : countrieParams.nativeName,
-      population: !countrieParams.population ? '' : countrieParams.population,
+      population: !countrieParams.population
+        ? ''
+        : this.formatNumberOfPeople(countrieParams.population),
       continent: !countrieParams.region ? '' : countrieParams.region,
       region: !countrieParams.subregion ? '' : countrieParams.subregion,
       capital: !countrieParams.capital ? '' : countrieParams.capital,
@@ -209,6 +214,15 @@ export default class Home extends Component {
     return languages;
   };
 
+  formatNumberOfPeople = (param) => {
+    const formatedNumber = param
+      .toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+      })
+      .slice(0, -3);
+    return formatedNumber;
+  };
+
   builBorderElement(borderParams) {
     if (!borderParams) return;
     const borderElements = document.createElement('div');
@@ -216,6 +230,7 @@ export default class Home extends Component {
       .then((response) => {
         for (let i = 0; i < response.length; i += 1) {
           const div = document.createElement('div');
+          div.classList.add('borderCountry');
           const h1 = document.createElement('h1');
           h1.textContent = response[i].name;
           div.appendChild(h1);
@@ -279,8 +294,17 @@ export default class Home extends Component {
               className="header-component-two"
               onClickCapture={this.hundleSetLight}
             >
-              <WiMoonWaningCrescent2 className="moonIcon" size="15" />
-              <h2 className="header-h">Dark Mode</h2>
+              {light === 'lightOn' ? (
+                <>
+                  <WiMoonWaningCrescent2 className="moonIcon" size="15" />
+                  <h2 className="header-h">Dark Mode</h2>
+                </>
+              ) : (
+                <>
+                  <WiSolarEclipse className="moonIcon" size="15" />
+                  <h2 className="header-h">Light Mode</h2>
+                </>
+              )}
             </div>
           </Header>
           <Article>

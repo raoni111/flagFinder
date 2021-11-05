@@ -17,7 +17,7 @@ export const Section = styled.section`
   min-height: 100vh;
   background-color: ${color.VeryDarkBlue};
   &#lightOn {
-    background-color: white;
+    background-color: ${color.VeryLightGray};
   }
   @media (max-height: 100vh) {
     height: 100%;
@@ -54,8 +54,8 @@ export const Header = styled.header`
     }
   }
   &#lightOn {
-    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
-    background-color: white;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.1);
+    background-color: ${color.VeryLightGray};
     .header-component-one {
       color: ${color.VeryDarkBlue};
     }
@@ -128,9 +128,9 @@ export const Nav = styled.nav`
     }
   }
   &#lightOn {
-    background-color: white;
+    background-color: ${color.VeryLightGray};
     .search-content {
-      background-color: hsl(0, 0%, 98%);
+      background-color: ${color.white};
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
       input {
         color: ${color.VeryDarkBlue};
@@ -192,10 +192,12 @@ export const Countries = styled.div`
         ${displayFlex('flex-start', 'column', 'start')}
         margin-top: 1rem;
         h3 {
+          ${displayFlex('flex-start', 'row', 'start')}
           font-size: 1.4rem;
-          margin-top: 1rem;
+          margin: 1rem 0rem 0rem 0rem;
           color: ${color.FontColorVaryLigthGray};
           span {
+            margin-left: 0.5rem;
             color: ${color.FontColorGray};
           }
         }
@@ -271,7 +273,7 @@ export const CountryDetail = styled.article`
     width: 100%;
     color: ${color.FontColorWhite};
     .countrie-flag {
-      width: 40%;
+      width: 30%;
       margin-right: 5rem;
       img {
         width: 100%;
@@ -371,6 +373,42 @@ export const CountryDetail = styled.article`
       }
     }
   }
+  &#lightOn {
+    background-color: ${color.VeryLightGray};
+    div {
+      h1 {
+        color: ${color.VeryDarkBlue};
+      }
+    }
+    .back-button-conteiner {
+      button {
+        color: ${color.VeryDarkBlue};
+        background-color: ${color.white};
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        .back-arrow {
+          color: ${color.VeryDarkBlue};
+        }
+      }
+    }
+    .border-countries {
+      background-color: ${color.VeryLightGray};
+    }
+    .countrie-flag {
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .border-countries-conteiner {
+      background-color: ${color.VeryLightGray};
+      div {
+        div.borderCountry {
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+          color: ${color.VeryDarkBlue};
+          background-color: ${color.white};
+          h1 {
+          }
+        }
+      }
+    }
+  }
   @media (max-width: 900px) {
     padding: 0rem 3rem;
     .border-countries-conteiner {
@@ -397,6 +435,7 @@ export const CountryDetail = styled.article`
       }
       .countrie-details {
         width: 100%;
+        margin-top: 1rem;
       }
     }
     .border-countries-conteiner {
@@ -419,6 +458,9 @@ export const CountryDetail = styled.article`
     }
   }
   @media (max-width: 520px) {
+    .back-button-conteiner {
+      margin: 8rem 0 4rem 0;
+    }
     .conteiner-coutrie-details {
       .countrie-flag {
         img {
