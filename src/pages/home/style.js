@@ -11,7 +11,6 @@ function displayFlex(justifyContent, flexDirection, alignItens) {
     align-items: ${alignItens};
   `;
 }
-
 export const Section = styled.section`
   width: 100%;
   min-height: 100vh;
@@ -348,18 +347,16 @@ export const CountryDetail = styled.article`
     }
     .border-countries {
       ${displayFlex('start', 'row', 'center')}
-      margin-right: 0.5rem;
       border-radius: 5px;
       background-color: hsl(210, 24%, 13%);
       div {
-        ${displayFlex('space-evenly', 'row', 'center')}
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
         padding: 0.01rem;
         div {
-          overflow: hidden;
           ${displayFlex('center', 'row', 'center')}
-          width: 70px;
-          height: 20px;
-          margin-right: 0.5rem;
           padding: 0.5rem;
           border-radius: 5px;
           background-color: ${color.DarkBlue};

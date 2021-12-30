@@ -70,11 +70,25 @@ export default class Home extends Component {
           countrie: countrieObj,
         });
         this.bodyScroll(false);
+        if (!response[0].borders) {
+          this.clearElement('border-countries');
+          return;
+        }
+        console.log('teste');
         this.builBorderElement(response[0].borders);
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  clearElement = (className) => {
+    const el = document.querySelector(`.${className}`);
+    el.innerHTML = `
+    <div>
+      <div class="borderCountry">no country found</div>
+    </div>
+    `;
   };
 
   closeDetail = () => {
@@ -223,16 +237,32 @@ export default class Home extends Component {
     return formatedNumber;
   };
 
+  formatName = (nome) => {
+    const arrayNome = Array.from(nome);
+    let stringNome = '';
+    for (let i = 0; i < arrayNome.length; i += 1) {
+      if (arrayNome[i] === '(') {
+        return stringNome;
+      }
+      stringNome += arrayNome[i];
+    }
+    return stringNome;
+  };
+
   builBorderElement(borderParams) {
     if (!borderParams) return;
     const borderElements = document.createElement('div');
     this.searchCountriesByCode(borderParams.toString())
       .then((response) => {
+        if (!response) {
+          this.clearElement('border-countries');
+          return;
+        }
         for (let i = 0; i < response.length; i += 1) {
           const div = document.createElement('div');
           div.classList.add('borderCountry');
           const h1 = document.createElement('h1');
-          h1.textContent = response[i].name;
+          h1.textContent = this.formatName(response[i].name);
           div.appendChild(h1);
           borderElements.appendChild(div);
         }
