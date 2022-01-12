@@ -34,16 +34,16 @@
   </div>
   <h2  align="center" >Modo Claro</h2>
   <div align="center">
-    <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149163874-0a3c17e6-b385-41b8-b1fd-6aa5acbef721.png" alt="image do tema escuro" />
+    <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149165932-292348b3-e2c1-4fbd-824f-ad9aa7ed6554.png" alt="image do tema escuro" />
   </div>
    <h1 align="center"> Detail: Mobile</h1>
   <h1  align="center" >─────────────────────────────────────────</h1>
   <h2  align="center" >Modo Escuro</h2>
   <div align="center">
-    <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149164519-5d318708-c629-4b9d-bb90-3d5ab0e3d7b2.png" alt="image do tema escuro" />
+    <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149165634-1daf1ee2-62f5-4e5c-a313-f5c46fd2dccf.png" alt="image do tema escuro" />
   </div>
   <h2  align="center" >Modo Claro</h2>
   <div align="center">
-    <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149164721-de924f06-ac80-45df-abf5-12d9fbfd6baa.png" alt="image do tema escuro" />
+    <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149165223-34e86752-9f46-4996-ae29-c5d8ca49eabe.png" alt="image do tema escuro" />
   </div>
 </section>
