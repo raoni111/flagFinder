@@ -1,9 +1,9 @@
 # flagFinder
 <section>
   <h1>
-    <a href="https://findcuntries.netlify.app/">Find country</a>
+    <a href="https://findcuntries.netlify.app/" target="_blank" >Find country</a>
   </h1>
-  <h3>teste você mesmo: https://findcuntries.netlify.app/</h3>
+  <h3>teste você mesmo: <a href="https://findcuntries.netlify.app/" target="_blank" >findcuntries.netlify.app</a></h3>
   <p>esse projeto e uma resolução do desafio do Frontend Mentor, 100% feito por mim.
   <br/>o projeto tem responsividade com a maioria do dispositivos da atualidade, e contem dois modo sendo o escuro e o claro </p>
   <h1 align="center"> home: Desktop</h1>
