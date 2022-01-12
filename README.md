@@ -12,7 +12,7 @@
   <div align="center">
     <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149157260-f2a9216a-0512-4182-8ab4-b4f9800f8244.png" alt="image do tema escuro" />
   </div>
-  <h2 align="center">Tema claro</h2>
+  <h2 align="center">Modo claro</h2>
   <div align="center">
     <img align="center" width="500" src="https://user-images.githubusercontent.com/43501348/149159684-2e970c2c-439e-4aee-8e61-fdd2b274b7e8.png" alt="image do tema escuro" />
   </div>
